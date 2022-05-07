@@ -1,0 +1,64 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Install Minecraft",
+      "type": "task",
+      "column": "done"
+    },
+    {
+      "id": 2,
+      "title": "Install texture packs",
+      "type": "task",
+      "column": "review"
+    },
+    {
+      "id": 3,
+      "title": "Create server",
+      "type": "feature",
+      "column": "done"
+    },
+    {
+      "id": 4,
+      "title": "Invite friends",
+      "type": "task",
+      "column": "in-progress"
+    },
+    {
+      "id": 5,
+      "title": "Build shelter",
+      "type": "feature",
+      "column": "done"
+    },
+    {
+      "id": 6,
+      "title": "Mine iron",
+      "type": "task",
+      "column": "in-progress"
+    },
+    {
+      "id": 7,
+      "title": "Create tools",
+      "type": "feature",
+      "column": "review"
+    },
+    {
+      "id": 8,
+      "title": "Find diamonds",
+      "type": "task",
+      "column": "todo"
+    },
+    {
+      "id": 9,
+      "title": "Build castle",
+      "type": "feature",
+      "column": "todo"
+    },
+    {
+      "id": 10,
+      "title": "Defeat Ender Dragon",
+      "type": "task",
+      "column": "todo"
+    }
+  ]
+}
