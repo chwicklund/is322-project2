@@ -1,25 +1,62 @@
-import logo from '../logo.svg';
-import '../App.css';
+import React from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import TaskList from './TaskList';
+import AddTask from './AddTask';
+import { setTasks, tasksError } from "../actions";
+
+class App extends React.Component {
+
+  componentDidMount() {
+    this.getData();
+  }
+
+  getData() {
+    axios.get('https://my-json-server.typicode.com/chwicklund/is322-project2/tasks')
+      .then(response => {
+        this.props.setTasks(response.data);
+      }).catch(error => {
+        this.props.tasksError();
+      });
+  }
+
+  render() {
+    return (
+        <div className="container">
+          <div className="row">
+            <AddTask />
+          </div>
+          <div className="row">
+
+            <div className="col-sm-3">
+              <TaskList />
+            </div>
+
+            <div className="col-sm-3">
+              <TaskList />
+            </div>
+
+            <div className="col-sm-3">
+              <TaskList />
+            </div>
+
+            <div className="col-sm-3">
+              <TaskList />
+            </div>
+
+          </div>
+        </div>
+    );
+  }
+
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+
+    errorMessage: state.errors.getTasks
+  };
+}
+
+export default connect(mapStateToProps, { setTasks, tasksError })(App);

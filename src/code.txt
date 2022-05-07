@@ -1,0 +1,32 @@
+/* const generateID = () => {
+    return `${Date.now()}${Math.floor(Math.random() * 100)}`;
+};
+
+const DEFAULT_STATE = {
+    tasks: [
+        { id: generateID(), title: 'Test1', type: 'task', column: 'todo' },
+        { id: generateID(), title: 'Test2', type: 'task', column: 'in-progress' },
+        { id: generateID(), title: 'Test3', type: 'task', column: 'done' },
+        { id: generateID(), title: 'Test4', type: 'feature', column: 'todo' },
+        { id: generateID(), title: 'Test5', type: 'feature', column: 'review' },
+    ] ,
+    todo: [],
+    inprog: [],
+    review: [],
+    done: [],
+};
+
+
+const sortTasks = (state) => {
+    let newState = {
+        tasks: [ ...state.tasks ],
+        todo: state.tasks.filter(char => char.column === 'todo'),
+        inprog: state.tasks.filter(char => char.column === 'in-progress'),
+        review: state.tasks.filter(char => char.column === 'review'),
+        done: state.tasks.filter(char => char.column === 'done'),
+    };
+
+    return newState;
+};
+
+ */
