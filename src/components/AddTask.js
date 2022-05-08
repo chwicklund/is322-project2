@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import { addTask } from '../actions';
 
 class AddTask extends React.Component {
-  state = { newTask: '' }
+  state = { newTask: '', column: '' }
 
   onFormSubmit = (event) => {
     event.preventDefault();
 
-    this.props.addTask(this.state.newTask);
-    this.setState({ newTask: '' })
+    this.props.addTask(this.state.newTask, this.state.column);
+    this.setState({ newTask: '' , column: ''})
   }
 
   render() {
@@ -21,8 +21,8 @@ class AddTask extends React.Component {
                value={this.state.newTask}
                onChange={(e) => this.setState({ newTask: e.target.value })} />
           <select name="column-type"
-                  value={this.state.newTask}
-                  onChange={(e) => this.setState({ newTask: e.target.value })}>
+                  value={this.state.column}
+                  onChange={(e) => this.setState({ column: e.target.value })}>
           <option value="todo">To-Do</option>
           <option value="inp">In-Progress</option>
           <option value="review">Review</option>

@@ -30,19 +30,19 @@ class App extends React.Component {
           <div className="row">
 
             <div className="col-sm-3">
-              <TaskList />
+              <TaskList column="To-Do"/>
             </div>
 
             <div className="col-sm-3">
-              <TaskList />
+              <TaskList column="In-Progress"/>
             </div>
 
             <div className="col-sm-3">
-              <TaskList />
+              <TaskList column="Review"/>
             </div>
 
             <div className="col-sm-3">
-              <TaskList />
+              <TaskList column="Done"/>
             </div>
 
           </div>
