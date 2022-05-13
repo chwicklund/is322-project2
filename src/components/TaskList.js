@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { markDone } from '../actions';
 
 import TaskItem from './TaskItem';
-import AddTask from "./AddTask";
+
 
 class TaskList extends React.Component {
 
@@ -12,9 +12,9 @@ class TaskList extends React.Component {
   }
 
   render() {
-    const { title, column } = this.props;
-    const taskItems = this.props.tasks.filter(taskItem => taskItem.columns = column).map(task => {
-      return <TaskItem  task={task} key={task.id} markDone={this.markDone} />
+    const { column } = this.props;
+    const taskItems = this.props.tasks.map(task => {
+      return <TaskItem  task={task} key={task.id} column={task.column} markDone={this.markDone} />
     });
 
     return (
@@ -24,15 +24,13 @@ class TaskList extends React.Component {
               { taskItems }
           </ul>
         </div>
-
     )
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    tasks: state.tasks
-
+    tasks: state.tasks,
   };
 }
 
